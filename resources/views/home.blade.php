@@ -1,9 +1,11 @@
 @extends('layout/main-layout')
 
-@section('content')
+@section('content-home')
+<main class="main">
+    <div class="container">
+        <div class="current-series">
 
-<div class="container">
-    ciao
-</div>
-    
+        </div>
+    </div>  
+</main>
 @endsection

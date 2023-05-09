@@ -20,8 +20,14 @@
 <body>
 
 @include('partials/header')
+
 @include('partials/jumbo')
-@yield('content')
+
+@yield('content-home')
+@yield('content-page')
+
+@include('partials/footer')
+
 
 
 </body>
