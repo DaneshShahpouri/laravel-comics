@@ -1,0 +1,25 @@
+.jumbo {
+    background-image: url(../img/jumbotron.jpg);
+    background-size: cover;
+    height: 280px;
+
+
+    .container {
+        height: 100%;
+        position: relative;
+
+        .current-series {
+            padding: .5em 1em;
+            width: 125px;
+            font-size: 1.05em;
+
+            background-color: $primaryColor;
+            color: white;
+            font-size: small;
+
+            position: absolute;
+            bottom: -15px;
+        }
+    }
+
+}

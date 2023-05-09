@@ -1,1 +1,10 @@
 @import '~bootstrap/scss/bootstrap';
+
+//Variabili
+@import './partials/variables';
+
+// header
+@import './partials/header';
+
+// jumbo
+@import './partials/jumbo';
