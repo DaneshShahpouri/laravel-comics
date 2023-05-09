@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
 
     $footerSocials = config('footerUtility');
+    $comics = config('comics');
 
     $navLinks  = [
         'character',
@@ -75,7 +76,7 @@ Route::get('/', function () {
 
     $currentPage = 'home';
 
-    return view('home', compact('navLinks', 'footerSocials', 'footerLinks', 'currentPage'));
+    return view('home', compact('navLinks', 'footerSocials', 'comics', 'footerLinks', 'currentPage'));
 })->name('home');
 
 
@@ -87,6 +88,7 @@ Route::get('/character', function () {
 
 // comics
 Route::get('/comics', function () {
+
     $comics = config('comics');
     $footerSocials = config('footerUtility');
     $mainBlueBanner = config('mainUtility');
@@ -148,17 +150,10 @@ Route::get('/comics', function () {
 
     $currentPage = 'comics';
 
-
-
-
     // |--------------------------------------------------------------------------
     // Non sono completamente sicuro di come passo i dati di 'footerLinks', 
     // forse è più giusto passarli dai config come 'comics' e 'footerUtility'.
     // |--------------------------------------------------------------------------
-
-
-
-
 
 
     return view('comics', compact('comics', 'footerSocials', 'mainBlueBanner', 'navLinks', 'footerLinks', 'currentPage'));
@@ -169,7 +164,6 @@ Route::get('/movies', function () {
 
     return 'hello';
 })->name('movies');
-
 
 // tv
 Route::get('/tv', function () {
