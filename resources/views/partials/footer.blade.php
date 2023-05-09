@@ -23,7 +23,7 @@
         <div class="container">
 
             <div class="left-side">
-                <button class="btn">Sign-up Now!</button>
+                <button class="_btn">Sign-up Now!</button>
             </div>
 
             <div class="right-side">

@@ -87,6 +87,7 @@ Route::get('/character', function () {
 Route::get('/comics', function () {
     $comics = config('comics');
     $footerSocials = config('footerUtility');
+    $mainBlueBanner = config('mainUtility');
 
     $navLinks  = [
         'character',
@@ -156,7 +157,7 @@ Route::get('/comics', function () {
 
 
 
-    return view('comics', compact('comics', 'footerSocials', 'navLinks', 'footerLinks'));
+    return view('comics', compact('comics', 'footerSocials', 'mainBlueBanner', 'navLinks', 'footerLinks'));
 })->name('comics');
 
 // movies

@@ -1,21 +1,50 @@
 @extends('layout/main-layout')
 
 @section('content-page')
-<main class="main">
+<section class="main">
+    
     <div class="container">
-        <div class="current-series">
 
-            @foreach ($comics as $singleComic)
-            <div class="_card">
-                <div class="img-wrapper">
-                    <img src="{{$singleComic["thumb"]}}" alt="">
+        <div class="upper-title-wrapper">
+            <h4 class="upper-title">Current Series</h4>
+        </div>
+
+        <div class="_container-inner">
+            <div class="current-series">
+                @foreach ($comics as $singleComic)
+                <div class="_card">
+                    <div class="img-wrapper">
+                        <img src="{{$singleComic["thumb"]}}" alt="Copertina">
+                    </div>
+    
+                    <span class="title-card">{{$singleComic["title"]}}</span>
+                </div>
+                @endforeach
+            </div>
+            <button class="_btn">Load More</button>
+        </div>
+    </div>
+
+</section>
+
+<section class="blue-banner">
+
+    <div class="container">
+        <div class="container-inner">
+            @foreach($mainBlueBanner as $item)
+
+            <div class="blue-banner-item">
+                <div class="icon-wrapper">
+                    <img src="{{ Vite::asset($item['img']) }}" alt="icon blue banner">
                 </div>
 
-                <span class="titl3">{{$singleComic["title"]}}</span>
+                <div class="title">{{$item['name']}}</div>
             </div>
-            @endforeach
 
+            @endforeach
         </div>
-    </div>  
-</main>
+    </div>
+    
+</section>
+
 @endsection
