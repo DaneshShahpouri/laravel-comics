@@ -15,6 +15,76 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+
+    $footerSocials = config('footerUtility');
+
+    $navLinks  = [
+        'character',
+        'comics',
+        'movies',
+        'tv',
+        'games',
+        'collectibles',
+        'video',
+        'fans',
+        'news',
+        'shop'
+    ];
+
+    $footerLinks = [
+        ['Dc Comics', [
+            'Character',
+            'Comics',
+            'Movies',
+            'Tv',
+            'Games',
+            'Cllectibles',
+            'Video',
+            'Fans',
+            'News',
+        ]], [
+            'Shop', [
+                'Shop DC',
+                'Shop DC Collectibles'
+            ]
+        ], [
+            'DC', [
+                'Terms Of Use',
+                'Privacy Policy (New)',
+                'Ad Choices',
+                'Advertising',
+                'Jobs',
+                'Subscritions',
+                'Talent Workshops',
+                'CPSC Certificates',
+                'Ratings',
+                'Shop Help',
+                'Contact Us'
+            ]
+        ], [
+            'Sites',
+            [
+                'DC',
+                'MAD Magazine',
+                'DC Kids',
+                'DC Universe',
+                'DC Power Visa'
+            ]
+        ]
+    ];
+
+    return view('home', compact('navLinks', 'footerSocials', 'footerLinks'));
+})->name('home');
+
+
+// character
+Route::get('/character', function () {
+
+    return 'hello';
+})->name('character');
+
+// comics
+Route::get('/comics', function () {
     $comics = config('comics');
     $footerSocials = config('footerUtility');
 
@@ -86,78 +156,8 @@ Route::get('/', function () {
 
 
 
-    return view('home', compact('comics', 'footerSocials', 'navLinks', 'footerLinks'));
-})->name('home');
-
-// character
-Route::get('/character', function () {
-
-    return 'hello';
-})->name('character');
-
-// comics
-Route::get('/comics', function () {
-
-    $footerSocials = config('footerUtility');
-
-    $navLinks  = [
-        'character',
-        'comics',
-        'movies',
-        'tv',
-        'games',
-        'collectibles',
-        'video',
-        'fans',
-        'news',
-        'shop'
-    ];
-
-    $footerLinks = [
-        ['Dc Comics', [
-            'Character',
-            'Comics',
-            'Movies',
-            'Tv',
-            'Games',
-            'Cllectibles',
-            'Video',
-            'Fans',
-            'News',
-        ]], [
-            'Shop', [
-                'Shop DC',
-                'Shop DC Collectibles'
-            ]
-        ], [
-            'DC', [
-                'Terms Of Use',
-                'Privacy Policy (New)',
-                'Ad Choices',
-                'Advertising',
-                'Jobs',
-                'Subscritions',
-                'Talent Workshops',
-                'CPSC Certificates',
-                'Ratings',
-                'Shop Help',
-                'Contact Us'
-            ]
-        ], [
-            'Sites',
-            [
-                'DC',
-                'MAD Magazine',
-                'DC Kids',
-                'DC Universe',
-                'DC Power Visa'
-            ]
-        ]
-    ];
-
-    return view('comics', compact('navLinks', 'footerSocials', 'footerLinks'));
+    return view('comics', compact('comics', 'footerSocials', 'navLinks', 'footerLinks'));
 })->name('comics');
-
 
 // movies
 Route::get('/movies', function () {
