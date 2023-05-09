@@ -73,7 +73,9 @@ Route::get('/', function () {
         ]
     ];
 
-    return view('home', compact('navLinks', 'footerSocials', 'footerLinks'));
+    $currentPage = 'home';
+
+    return view('home', compact('navLinks', 'footerSocials', 'footerLinks', 'currentPage'));
 })->name('home');
 
 
@@ -144,6 +146,8 @@ Route::get('/comics', function () {
         ]
     ];
 
+    $currentPage = 'comics';
+
 
 
 
@@ -157,7 +161,7 @@ Route::get('/comics', function () {
 
 
 
-    return view('comics', compact('comics', 'footerSocials', 'mainBlueBanner', 'navLinks', 'footerLinks'));
+    return view('comics', compact('comics', 'footerSocials', 'mainBlueBanner', 'navLinks', 'footerLinks', 'currentPage'));
 })->name('comics');
 
 // movies

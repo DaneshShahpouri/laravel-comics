@@ -27,7 +27,7 @@
     
             <ul class="nav-menu">
                 @foreach ($navLinks as $link)
-                    <li><a href="{{route($link)}}">{{$link}}</a></li>
+                    <li class="{{$link==$currentPage ? 'activated' : ''}}"><a href="{{route($link)}}">{{$link}}</a></li>
                 @endforeach
             </ul>
     

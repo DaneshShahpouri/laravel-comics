@@ -57,6 +57,8 @@
 
                 margin-bottom: 0;
 
+
+
                 li {
                     height: 100%;
 
@@ -74,6 +76,13 @@
                             border-bottom: 4px solid $primaryColor;
                             color: $primaryColor;
                         }
+                    }
+                }
+
+                .activated {
+                    a {
+                        border-bottom: 4px solid $primaryColor;
+                        color: $primaryColor;
                     }
                 }
             }
